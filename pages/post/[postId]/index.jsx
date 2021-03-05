@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import postApi from "../api/postApi";
-import Layout from '../../components/layout'
-
+import postApi from "../../api/postApi";
+import Container from '../../../components/container'
+import Header from '../../../components/common/Header'
 const PostId = (props) => {
     const { query } = useRouter();
     const [postId, setPostId] = useState(query.postId);
@@ -29,17 +29,18 @@ const PostId = (props) => {
     }, [postId]);
 
     return (
-        <Layout>
+        <Container>
+            <Header />
             <h1>{post.title}</h1>
             <div className="thumb">
-                <img src={post.imageUrl} alt={post.title} className="img-fluid"/>
+                <img src={post.imageUrl} alt={post.title} className="img-fluid" />
             </div>
             <div className="summary">
                 <p>
                     {post.summary}
                 </p>
             </div>
-        </Layout>
+        </Container>
     );
 };
 

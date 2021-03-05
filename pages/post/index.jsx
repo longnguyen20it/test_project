@@ -1,8 +1,10 @@
 import React, { Suspense, useEffect, useState } from "react";
 import postApi from "../api/postApi";
-import Layout from "../../components/layout";
 import PostList from "../../components/post/PostList";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../../components/common/Header";
+import Container from "../../components/container";
+import Footer from "../../components/common/Footer";
 
 export default function Post() {
     const [data, setData] = useState([]);
@@ -22,9 +24,9 @@ export default function Post() {
     };
 
     return (
-        <Layout>
-            <h1>Post list:</h1>
-            <PostList list={data} handleFetchData={handleClickFetchData} error={error}/>
-        </Layout>
+        <Container>
+            <Header />
+            <PostList list={data} handleFetchData={handleClickFetchData} error={error} />
+        </Container>
     );
 }

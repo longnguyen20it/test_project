@@ -11,7 +11,7 @@ function PostList(props) {
     }, [props]);
 
     return (
-        <div className="post-list">
+        <div className="post-list py-4">
             <button
                 className="btn btn-primary"
                 onClick={() => {
